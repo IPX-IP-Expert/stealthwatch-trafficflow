@@ -31,6 +31,6 @@ if __name__ == '__main__':
     # Write output files, one per dest_ip
     for dest_ip, lines in grouped_data.items():
         with open(f'output/{dest_ip}.csv', 'w') as f:
-            f.write('src_ip,dest_port,dest_protocol\n')
+            f.write('name,dest_ip,src_ip,dest_port,dest_protocol,action\n')
             for line in lines:
-                f.write(f"{line['src_ip']},{line['dest_port']},{line['dest_protocol']}\n")
+                f.write(f"{line['dest_ip']},{line['dest_ip']},{line['src_ip']},{line['dest_port']},{line['dest_protocol']},\n")
